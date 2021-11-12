@@ -1,0 +1,72 @@
+"""
+ 
+Author: Kayden M
+Date: 11/2/21
+Course: ICP1
+ 
+Description: Pretty basic calculator that can do
+ 
+"""
+ 
+import math
+from typing import Type
+from tkinter import *
+
+
+def add(x, y):
+    return x + y
+ 
+def subtract(x, y):
+    return x - y
+ 
+def multiply(x, y):
+    return x * y
+ 
+def divide(x, y):
+    return x / y
+ 
+def squareroot(s):
+    return math.sqrt(s)
+ 
+list_of_operations = ["multiply", "divide", "add", "squareroot", "subtract"]
+ 
+while True:
+    operation = input(list_of_operations)
+    
+    if operation == "stop":
+        exit()
+    elif operation not in list_of_operations:
+        print("Invalid option please spell as seen...")
+        continue
+    else:
+        
+        if operation == "squareroot":
+            num1 = int(input("Choose a number: "))
+            print(squareroot(num1))
+        else:
+            while True:
+                num1 = input("Choose a number: ")
+                
+                num2 = input("Choose a number: ")
+
+                try:
+                    num1 = float(num1)
+                    num2 = float(num2)
+                    break
+                except ValueError:
+                    print("Invalid number")
+            if operation == "multiply":
+   
+                print(multiply(num1, num2))
+   
+            elif operation == "subtract":
+               
+                print(subtract(num1, num2))
+   
+            elif operation == "divide":
+   
+                print(divide(num1, num2))
+   
+            elif operation == "add":
+                                   
+                print(add(num1, num2))
